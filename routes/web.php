@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProyectoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('proyectos/create', [ProyectoController::class,'create'])->middleware(['auth','verified'])->name('salas.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
