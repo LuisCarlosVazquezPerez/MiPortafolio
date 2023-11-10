@@ -8,8 +8,8 @@ Alpine.start();
 
 // Initialization for ES Users
 import {
-    Carousel,
-    initTE,
-  } from "tw-elements";
-  
-  initTE({ Carousel });
+  Input,
+  initTE,
+} from "tw-elements";
+
+initTE({ Input });
