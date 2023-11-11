@@ -35,5 +35,7 @@
         </div>
 
         @livewireScripts
+        @stack('scripts')
+        @stack('desaparecer')
     </body>
 </html>

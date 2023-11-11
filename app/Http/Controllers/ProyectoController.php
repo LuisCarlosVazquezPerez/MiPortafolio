@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proyecto;
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
@@ -41,9 +42,11 @@ class ProyectoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Proyecto $proyectos)
     {
-        //
+        return view('proyectos.edit',[
+            'proyectos' => $proyectos
+        ]);
     }
 
     /**

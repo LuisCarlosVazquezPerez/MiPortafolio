@@ -19,7 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('proyectos/create', [ProyectoController::class,'create'])->middleware(['auth','verified'])->name('salas.create');
+Route::get('proyectos/create', [ProyectoController::class,'create'])->middleware(['auth','verified'])->name('proyectos.create');
+Route::get('proyectos/{proyectos}/edit', [ProyectoController::class,'edit'])->middleware(['auth','verified'])->name('proyectos.edit');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
