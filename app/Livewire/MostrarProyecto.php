@@ -18,7 +18,6 @@ class MostrarProyecto extends Component
 
         $proyecto->delete();
         return redirect(request()->header('Referer'));
-        
     }
 
 
