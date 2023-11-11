@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProyectoController;
+use App\Http\Controllers\ReconocimientoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,8 @@ Route::get('/', function () {
 
 Route::get('proyectos/create', [ProyectoController::class,'create'])->middleware(['auth','verified'])->name('proyectos.create');
 Route::get('proyectos/{proyectos}/edit', [ProyectoController::class,'edit'])->middleware(['auth','verified'])->name('proyectos.edit');
+
+Route::get('reconocimientos/create', [ReconocimientoController::class,'create'])->middleware(['auth','verified'])->name('reconocimientos.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
