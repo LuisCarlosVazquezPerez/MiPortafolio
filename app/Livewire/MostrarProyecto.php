@@ -11,6 +11,7 @@ class MostrarProyecto extends Component
     protected $listeners = ['eliminarProyecto'];
 
     public $buscar = '';
+    public $ordenar = 'asc';
     
     
     public function eliminarProyecto(Proyecto $proyecto)
@@ -22,6 +23,11 @@ class MostrarProyecto extends Component
         $proyecto->delete();
         return redirect(request()->header('Referer'));
     }
+
+    public function Ordenar()
+    {
+        $this->ordenar = ($this->ordenar == 'asc') ? 'desc' : 'asc';
+    }
     
     
     public function render()
@@ -29,10 +35,11 @@ class MostrarProyecto extends Component
 
         $proyectos = Proyecto::where('Nombre', 'like', '%' . $this->buscar . '%')
             ->orWhere('Tecnologias', 'like', '%' . $this->buscar . '%')
+            ->orderBy('Nombre', $this->ordenar)
             ->get();
             
-    
         // $proyectos = Proyecto::all();
+
         return view('livewire.mostrar-proyecto', [
             'proyectos' => $proyectos,
         ]);

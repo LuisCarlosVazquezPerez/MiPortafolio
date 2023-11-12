@@ -11,6 +11,9 @@ class MostrarReconocimientos extends Component
 
     protected $listeners = ['eliminarReconocimiento'];
 
+    public $buscar = '';
+    public $ordenar = 'asc';
+
     public function eliminarReconocimiento(Reconocimiento $reconocimiento){
         if( $reconocimiento->Pdf ) {
             Storage::delete('public/reconocimientos/' . $reconocimiento->Pdf);            
@@ -20,9 +23,22 @@ class MostrarReconocimientos extends Component
         return redirect(request()->header('Referer'));
     }
 
+    public function Ordenar()
+    {
+        $this->ordenar = ($this->ordenar == 'asc') ? 'desc' : 'asc';
+    }
+
+    
     public function render()
     {
-        $reconocimientos = Reconocimiento::all();
+
+        $reconocimientos = Reconocimiento::where('Tecnologias', 'like', '%' . $this->buscar . '%')
+        ->orWhere('Empresa', 'like', '%' . $this->buscar . '%')
+        ->orderBy('Empresa', $this->ordenar)
+        ->get();
+
+        // $reconocimientos = Reconocimiento::all();
+
         return view('livewire.mostrar-reconocimientos',[
             'reconocimientos' => $reconocimientos
         ]);
