@@ -1,14 +1,8 @@
 <div class="overflow-hidden shadow-sm sm:rounded-lg mt-4">
 
-
-
-    <div class="mb-3 w-1/3">
+    <div class="mb-3 w-1/2">
         <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-            <input wire:model.live='buscar' type="search"
-                class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
-                placeholder="Ej. React, Laravel" aria-label="Search" aria-describedby="button-addon2" />
-
-            <!--Search icon-->
+          {{-- !ICONO --}}
             <span
                 class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
                 id="basic-addon2">
@@ -18,15 +12,34 @@
                         clip-rule="evenodd" />
                 </svg>
             </span>
-            <button wire:click="Ordenar">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-sort w-7 hover:text-green-600" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M3 9l4 -4l4 4m-4 -4v14" />
-                  <path d="M21 15l-4 4l-4 -4m4 4v-14" />
+
+            <input wire:model.live='buscar' type="search"
+                class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+                placeholder="Ej. Microsoft, React" aria-label="Search" aria-describedby="button-addon2" />
+
+
+            <button wire:click="Ordenar" class="ml-3">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-arrows-sort w-7 hover:text-green-600" viewBox="0 0 24 24"
+                    stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 9l4 -4l4 4m-4 -4v14" />
+                    <path d="M21 15l-4 4l-4 -4m4 4v-14" />
                 </svg>
-              </button>
+            </button>
+
+            <select
+                class="ml-5 py-3 pe-9 block w-auto border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                wire:model.live="tecnologiaSeleccionada">
+                <option value="">Seleccionar Tecnología</option>
+                @foreach ($tecnologiasDisponibles as $tecnologia)
+                    <option value="{{ $tecnologia }}">{{ $tecnologia }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
+
 
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">

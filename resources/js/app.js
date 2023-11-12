@@ -10,9 +10,10 @@ Alpine.start();
 import {
   Input,
   initTE,
+  Select
 } from "tw-elements";
 
-initTE({ Input });
+initTE({ Input, Select  });
 
 
 // import Dropzone from 'dropzone';

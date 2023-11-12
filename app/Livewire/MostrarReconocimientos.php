@@ -13,11 +13,24 @@ class MostrarReconocimientos extends Component
 
     public $buscar = '';
     public $ordenar = 'asc';
+    public $tecnologiaSeleccionada = '';
+    public $tecnologiasDisponibles = [];
 
-    public function eliminarReconocimiento(Reconocimiento $reconocimiento){
-        if( $reconocimiento->Pdf ) {
-            Storage::delete('public/reconocimientos/' . $reconocimiento->Pdf);            
-        } 
+    public function mount()
+    {
+        $tecnologiasUnicas = Reconocimiento::distinct('Tecnologias')->pluck('Tecnologias')->flatMap(function ($tecnologias) {
+            return explode(', ', $tecnologias);
+        })->unique()->values()->all();
+
+        $this->tecnologiasDisponibles = $tecnologiasUnicas;
+    }
+
+
+    public function eliminarReconocimiento(Reconocimiento $reconocimiento)
+    {
+        if ($reconocimiento->Pdf) {
+            Storage::delete('public/reconocimientos/' . $reconocimiento->Pdf);
+        }
 
         $reconocimiento->delete();
         return redirect(request()->header('Referer'));
@@ -28,18 +41,25 @@ class MostrarReconocimientos extends Component
         $this->ordenar = ($this->ordenar == 'asc') ? 'desc' : 'asc';
     }
 
-    
+
     public function render()
     {
+        $query = Reconocimiento::query();
 
-        $reconocimientos = Reconocimiento::where('Tecnologias', 'like', '%' . $this->buscar . '%')
-        ->orWhere('Empresa', 'like', '%' . $this->buscar . '%')
-        ->orderBy('Empresa', $this->ordenar)
-        ->get();
+        if (!empty($this->buscar)) {
+            $query->where(function ($q) {
+                $q->where('Tecnologias', 'like', '%' . $this->buscar . '%')
+                    ->orWhere('Empresa', 'like', '%' . $this->buscar . '%');
+            });
+        }
 
-        // $reconocimientos = Reconocimiento::all();
+        if (!empty($this->tecnologiaSeleccionada)) {
+            $query->where('Tecnologias', 'like', '%' . $this->tecnologiaSeleccionada . '%');
+        }
 
-        return view('livewire.mostrar-reconocimientos',[
+        $reconocimientos = $query->orderBy('Empresa', $this->ordenar)->get();
+
+        return view('livewire.mostrar-reconocimientos', [
             'reconocimientos' => $reconocimientos
         ]);
     }
