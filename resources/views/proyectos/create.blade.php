@@ -9,8 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if (session()->has('mensaje'))
                 <div id="mensaje"
-                    class="uppercase border border-green-600
-            bg-green-100 text-green-600 font-bold p-2 my-3">
+                    class="uppercase border border-green-600 rounded-lg
+                    bg-green-100 text-green-600 font-bold p-2 my-3 text-center">
                     {{ session('mensaje') }}
                 </div>
             @endif
@@ -27,7 +27,18 @@
         <script>
             setTimeout(() => {
                 let mensaje = document.getElementById('mensaje');
-                mensaje.style.display = 'none';
+
+                // Agrega una transición de escala y opacidad
+                mensaje.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
+
+                // Escala el mensaje y cambia la opacidad para iniciar la animación
+                mensaje.style.transform = 'scale(0.8)';
+                mensaje.style.opacity = '0';
+
+                // Después de que termine la animación, oculta el elemento
+                setTimeout(() => {
+                    mensaje.style.display = 'none';
+                }, 500); // Este valor debe coincidir con la duración de la animación (en milisegundos)
             }, 3000);
         </script>
     @endpush

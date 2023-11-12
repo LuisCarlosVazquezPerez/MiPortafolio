@@ -14,6 +14,7 @@ import {
 
 initTE({ Input });
 
+
 // import Dropzone from 'dropzone';
 // Dropzone.autoDiscover = false;
 // const dropzone = new Dropzone('#dropzone', {
