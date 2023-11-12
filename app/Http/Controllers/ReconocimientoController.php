@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reconocimiento;
 use Illuminate\Http\Request;
 
 class ReconocimientoController extends Controller
@@ -22,28 +23,21 @@ class ReconocimientoController extends Controller
         return view('reconocimientos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    
+    public function edit(Reconocimiento $reconocimientos)
     {
-        //
+        return view('reconocimientos.edit',[
+            'reconocimientos' => $reconocimientos
+        ]);
     }
 
     /**

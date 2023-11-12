@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit.prevent='actualizarProyecto'>
+    <form wire:submit.prevent='actualizarReconocimiento'>
         <button
             class="w-full mb-6 justify-center mt-6 relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-green-600 border-2 border-green-600 rounded-full hover:text-white group hover:bg-gray-50">
             <span
@@ -13,71 +13,55 @@
                     </path>
                 </svg>
             </span>
-            <span class="relative">Actualizar Proyecto</span>
+            <span class="relative">Actualizar Reconocimiento</span>
         </button>
 
 
         <div class="relative mb-3" data-te-input-wrapper-init>
-            <input type="text" wire:model="Nombre"
+            <input type="text" wire:model="Titulo"
                 class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput1" />
 
             <label for="exampleFormControlInput1"
                 class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0]
-                truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
-                ease-out @if ($Nombre) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif
-                peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
-                dark:text-neutral-200 dark:peer-focus:text-primary">
-                Nombre
+               truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
+               ease-out @if ($Titulo) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif
+               peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
+               dark:text-neutral-200 dark:peer-focus:text-primary">
+                Titulo
             </label>
 
-            @error('Nombre')
+            @error('Titulo')
                 <livewire:mostrar-alerta :message="$message">
                 @enderror
         </div>
 
         <div class="relative mb-3" data-te-input-wrapper-init>
-            <input type="text" wire:model="Descripcion"
+            <input type="text" wire:model="Empresa"
                 class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="exampleFormControlInput2" />
             <label for="exampleFormControlInput2"
                 class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
-              ease-out @if ($Descripcion) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif
-              peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
-              dark:text-neutral-200 dark:peer-focus:text-primary">
-                Descripcion
+             ease-out @if ($Empresa) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif
+             peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
+             dark:text-neutral-200 dark:peer-focus:text-primary">
+                Empresa
             </label>
-            @error('Descripcion')
+            @error('Empresa')
                 <livewire:mostrar-alerta :message="$message">
                 @enderror
         </div>
 
-
-        <div class="relative mb-3" data-te-input-wrapper-init>
-            <input type="text" wire:model="Anclas"
-                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                id="exampleFormControlInput3" />
-            <label for="exampleFormControlInput3"
-                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
-              ease-out  @if ($Anclas) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif 
-              peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
-              dark:text-neutral-200 dark:peer-focus:text-primary">
-                Anclas
-            </label>
-            @error('Anclas')
-                <livewire:mostrar-alerta :message="$message">
-                @enderror
-        </div>
 
         <div class="relative mb-3" data-te-input-wrapper-init>
             <input type="text" wire:model="Tecnologias"
                 class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                id="exampleFormControlInput4" />
-            <label for="exampleFormControlInput4"
+                id="exampleFormControlInput3" />
+            <label for="exampleFormControlInput3"
                 class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
-              ease-out @if ($Tecnologias) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif 
-              peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
-              dark:text-neutral-200 dark:peer-focus:text-primary">
+             ease-out  @if ($Tecnologias) transform translate-y-[-0.9rem] scale-[0.8] text-primary @endif 
+             peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none
+             dark:text-neutral-200 dark:peer-focus:text-primary">
                 Tecnologias
             </label>
             @error('Tecnologias')
@@ -85,33 +69,17 @@
                 @enderror
         </div>
 
+
         <div class="mb-3">
-            <input type="file" wire:model='Imagen_Nueva'  accept=".png, .jpg, .jpeg, .svg"
+            <input type="file" wire:model='Pdf_Nuevo' accept=".pdf"
                 class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
                 id="formFile" />
 
             <div class="mt-3">
-                @error('Imagen_Nueva')
+                @error('Pdf_Nuevo')
                     <livewire:mostrar-alerta :message="$message">
                     @enderror
             </div>
         </div>
-
-        <div class="flex my-5 justify-between">
-            <div>
-                <img class="rounded-lg w-[111px] h-[111px]" src="{{ asset('storage/proyectos/'. $Imagen) }}" />
-            </div>
-
-            <div>
-                @if ($Imagen_Nueva)
-                <img class="rounded-lg w-[111px] h-[111px]" src="{{ $Imagen_Nueva->temporaryUrl()}}">
-                <p>Imagen Nueva</p>
-                @endif
-            </div>
-        </div>
-
-
-
-
     </form>
 </div>

@@ -30,7 +30,7 @@
                         <path d="M20 15h-3v6" />
                         <path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z" />
                       </svg></a></td>
-                   <td> <a href="#"
+                   <td> <a href="{{route('reconocimientos.edit', $reconocimiento->id)}}"
                     class="px-6 py-2.5 rounded-full text-white text-sm tracking-wider font-semibold border-none outline-none bg-orange-600 hover:bg-orange-700 active:bg-orange-600">Editar</a></td>
                     <td><button type="button" wire:click="$dispatch('mostrarAlerta',{{$reconocimiento->id}})"
                         class="px-6 py-2.5 rounded-full text-white text-sm tracking-wider font-semibold border-none outline-none bg-red-600 hover:bg-red-700 active:bg-red-600">Eliminar</button></td>

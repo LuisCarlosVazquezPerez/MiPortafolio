@@ -38,7 +38,7 @@ class EditarProyecto extends Component
         $this->Imagen = $proyectos->Imagen;
     }
 
-    public function actualizarVacante(){
+    public function actualizarProyecto(){
         $datos = $this->validate();
 
         $eliminarImagen = Proyecto::find($this->proyecto_id);
