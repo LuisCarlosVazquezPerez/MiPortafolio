@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Reconocimiento;
 use Illuminate\Http\Request;
 
-class ReconocimientoController extends Controller
+class InicioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $reconocimientos = Reconocimiento::all();
-        return view('reconocimientos.index',[
-            'reconocimientos' => $reconocimientos
-        ]);
+        return view('luiscvp');
     }
 
     /**
@@ -23,24 +19,31 @@ class ReconocimientoController extends Controller
      */
     public function create()
     {
-        return view('reconocimientos.create');
+        //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        
+        //
     }
 
-    
-    public function edit(Reconocimiento $reconocimientos)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-        return view('reconocimientos.edit',[
-            'reconocimientos' => $reconocimientos
-        ]);
+        //
     }
 
     /**
