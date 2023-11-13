@@ -3,7 +3,7 @@
         <div class="relative mb-4 flex w-full flex-wrap items-stretch">
           {{-- !ICONO --}}
             <span
-                class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
+                class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700"
                 id="basic-addon2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                     <path fill-rule="evenodd"
@@ -13,7 +13,7 @@
             </span>
 
             <input wire:model.live='buscar' type="search"
-                class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+                class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none"
                 placeholder="Ej. Microsoft, React" aria-label="Search" aria-describedby="button-addon2" />
 
 
@@ -29,7 +29,7 @@
             </button>
 
             <select
-                class="ml-5 py-3 pe-9 block w-auto border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                class="ml-5 py-3 pe-9 block w-auto border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                 wire:model.live="tecnologiaSeleccionada">
                 <option value="">Seleccionar Tecnología</option>
                 @foreach ($tecnologiasDisponibles as $tecnologia)
@@ -48,7 +48,7 @@
             <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
                     <table class="min-w-full text-left text-sm font-light">
-                        <thead class="border-b font-medium dark:border-neutral-500">
+                        <thead class="border-b font-medium">
                             <tr>
                                 <th scope="col" class="px-6 py-4">Titulo</th>
                                 <th scope="col" class="px-6 py-4">Empresa</th>
@@ -60,7 +60,7 @@
                         </thead>
                         @foreach ($reconocimientos as $reconocimiento)
                             <tbody>
-                                <tr class="border-b dark:border-neutral-500" wire:key='{{ $reconocimiento->id }}'>
+                                <tr class="border-b" wire:key='{{ $reconocimiento->id }}'>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $reconocimiento->Titulo }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $reconocimiento->Empresa }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">
