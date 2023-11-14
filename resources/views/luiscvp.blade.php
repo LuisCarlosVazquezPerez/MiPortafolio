@@ -1,4 +1,5 @@
 <x-app-layout>
+    @include('layouts.navegacion')
     <h1 class="bg-red-200">Hola</h1>
 
 

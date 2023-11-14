@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+   /* Estilo para el borde inferior */
+   .underline-animation {
+    position: relative;
+    text-decoration: none;
+    color: #1E40AF; /* Color del texto normal */
+  }
+
+  .underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Grosor del borde inferior */
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    background-color: #1E40AF; /* Color del borde inferior */
+    transition: width 0.3s ease-out; /* Duración y efecto de transición */
+  }
+
+  .texto{
+    color: rgb(30,64,175);
+  }
+
+
+
+  .underline-animation:hover::after,
+  .underline-animation.active::after {
+    width: 100%; /* Ancho completo al hacer hover o enlace activo */
+  }

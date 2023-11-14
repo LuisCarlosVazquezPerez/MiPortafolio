@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcercaDeMiController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProyectoController;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [InicioController::class,'index'])->name('luiscvp');
 Route::get('proyectos/index', [ProyectoController::class,'index'])->name('proyectos.index');
 Route::get('reconocimientos/index', [ReconocimientoController::class,'index'])->name('reconocimientos.index');
+Route::get('acerca/index', [AcercaDeMiController::class,'index'])->name('acerca.index');
 
 Route::get('proyectos/create', [ProyectoController::class,'create'])->middleware(['auth','verified'])->name('proyectos.create');
 Route::get('proyectos/{proyectos}/edit', [ProyectoController::class,'edit'])->middleware(['auth','verified'])->name('proyectos.edit');
