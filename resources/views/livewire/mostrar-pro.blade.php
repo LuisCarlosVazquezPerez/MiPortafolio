@@ -59,7 +59,7 @@
 
                     {{-- ICONO --}}
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <a href="#">
+                        <a target="_blank" href="{{$proyecto->Github}}">
                             <svg class="opacity-70 hover:scale-125 transition ease rounded-full p-1 bg-white hover:opacity-100"
                                 xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
                                 <path

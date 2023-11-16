@@ -15,6 +15,7 @@ class CrearProyecto extends Component
     public $Anclas;
     public $Tecnologias;
     public $Imagen;
+    public $Github;
 
     use WithFileUploads;
 
@@ -23,11 +24,13 @@ class CrearProyecto extends Component
         'Descripcion' => 'required|string',
         'Anclas' => 'required|string',
         'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
-        'Imagen' => 'required'
+        'Github' => 'required|string',
+        'Imagen' => 'required',
     ];
 
     protected $messages = [
         'Nombre.required' => 'El campo Nombre es obligatorio.',
+        'Github.required' => 'El campo Github es obligatorio.',
         'Descripcion.required' => 'El campo Descripcion es obligatorio.',
         'Anclas.required' => 'El campo Anclas es obligatorio.',
         'Tecnologias.regex' => 'El formato de Tecnologias es incorrecto. Debe ser una lista separada por comas (",") y cada palabra debe comenzar con una letra mayúscula seguida de letras minúsculas y separadas por un espacio (por ejemplo, "React, Vue").',
@@ -44,6 +47,7 @@ class CrearProyecto extends Component
 
         Proyecto::create([
             'Nombre' => $datos['Nombre'],
+            'Github' => $datos['Github'],
             'Descripcion' => $datos['Descripcion'],
             'Anclas' => $datos['Anclas'],
             'Tecnologias' => $datos['Tecnologias'],

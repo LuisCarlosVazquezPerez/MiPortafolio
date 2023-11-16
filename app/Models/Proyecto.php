@@ -15,5 +15,6 @@ class Proyecto extends Model
         'Tecnologias',
         'Imagen',
         'user_id',
+        'Github',
     ];
 }

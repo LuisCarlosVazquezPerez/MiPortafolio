@@ -11,6 +11,7 @@ class EditarProyecto extends Component
 {
     public $proyecto_id;
     public $Nombre;
+    public $Github;
     public $Descripcion;
     public $Anclas;
     public $Tecnologias;
@@ -21,6 +22,7 @@ class EditarProyecto extends Component
 
     protected $rules = [
         'Nombre' => 'required|string',
+        'Github' => 'required|string',
         'Descripcion' => 'required|string',
         'Anclas' => 'required|string',
         'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
@@ -29,6 +31,7 @@ class EditarProyecto extends Component
 
     protected $messages = [
         'Nombre.required' => 'El campo Nombre es obligatorio.',
+        'Github.required' => 'El campo Github es obligatorio.',
         'Nombre.string' => 'El campo Nombre debe ser una cadena de caracteres.',
         'Descripcion.required' => 'El campo Descripcion es obligatorio.',
         'Descripcion.string' => 'El campo Descripcion debe ser una cadena de caracteres.',
@@ -48,6 +51,7 @@ class EditarProyecto extends Component
         $this->Anclas = $proyectos->Anclas;
         $this->Tecnologias = $proyectos->Tecnologias;
         $this->Imagen = $proyectos->Imagen;
+        $this->Github = $proyectos->Github;
     }
 
     public function actualizarProyecto(){
@@ -64,6 +68,7 @@ class EditarProyecto extends Component
 
         $proyecto = Proyecto::find($this->proyecto_id);
         $proyecto->Nombre = $datos['Nombre'];
+        $proyecto->Github = $datos['Github'];
         $proyecto->Descripcion = $datos['Descripcion'];
         $proyecto->Anclas = $datos['Anclas'];
         $proyecto->Tecnologias = $datos['Tecnologias'];
