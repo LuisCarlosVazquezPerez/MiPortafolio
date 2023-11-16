@@ -20,10 +20,19 @@ class ReconocimientoCrear extends Component
     protected $rules = [
         'Titulo' => 'required|string',
         'Empresa' => 'required|string',
-        'Tecnologias' => 'required|string',
+        'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
         'Pdf' => 'required',
     ];
 
+    protected $messages = [
+        'Titulo.required' => 'El campo Título es obligatorio.',
+        'Titulo.string' => 'El campo Título debe ser una cadena de caracteres.',
+        'Empresa.required' => 'El campo Empresa es obligatorio.',
+        'Empresa.string' => 'El campo Empresa debe ser una cadena de caracteres.',
+        'Tecnologias.regex' => 'El formato de Tecnologias es incorrecto. Debe ser una lista separada por comas (",") y cada palabra debe comenzar con una letra mayúscula seguida de letras minúsculas y separadas por un espacio (por ejemplo, "React, Vue").',
+        'Pdf.required' => 'El campo PDF es obligatorio.'
+    ];
+    
     public function crearReconocimientos()
     {
         $datos = $this->validate();

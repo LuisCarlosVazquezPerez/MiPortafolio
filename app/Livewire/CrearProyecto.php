@@ -22,11 +22,18 @@ class CrearProyecto extends Component
         'Nombre' => 'required|string',
         'Descripcion' => 'required|string',
         'Anclas' => 'required|string',
-        'Tecnologias' => 'required|string',
+        'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
         'Imagen' => 'required'
     ];
 
-
+    protected $messages = [
+        'Nombre.required' => 'El campo Nombre es obligatorio.',
+        'Descripcion.required' => 'El campo Descripcion es obligatorio.',
+        'Anclas.required' => 'El campo Anclas es obligatorio.',
+        'Tecnologias.regex' => 'El formato de Tecnologias es incorrecto. Debe ser una lista separada por comas (",") y cada palabra debe comenzar con una letra mayúscula seguida de letras minúsculas y separadas por un espacio (por ejemplo, "React, Vue").',
+        'Imagen.required' => 'El campo Imagen es obligatorio.'
+    ];
+    
     public function crearProyecto()
     {
         $datos = $this->validate();

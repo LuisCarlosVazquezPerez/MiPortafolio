@@ -23,11 +23,23 @@ class EditarProyecto extends Component
         'Nombre' => 'required|string',
         'Descripcion' => 'required|string',
         'Anclas' => 'required|string',
-        'Tecnologias' => 'required|string',
+        'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
         'Imagen_Nueva' => 'nullable|image'
     ];
 
-  
+    protected $messages = [
+        'Nombre.required' => 'El campo Nombre es obligatorio.',
+        'Nombre.string' => 'El campo Nombre debe ser una cadena de caracteres.',
+        'Descripcion.required' => 'El campo Descripcion es obligatorio.',
+        'Descripcion.string' => 'El campo Descripcion debe ser una cadena de caracteres.',
+        'Anclas.required' => 'El campo Anclas es obligatorio.',
+        'Anclas.string' => 'El campo Anclas debe ser una cadena de caracteres.',
+        'Tecnologias.regex' => 'El formato de Tecnologias es incorrecto. Debe ser una lista separada por comas (",") y cada palabra debe comenzar con una letra mayúscula seguida de letras minúsculas y separadas por un espacio (por ejemplo, "React, Vue").',
+        'Imagen_Nueva.image' => 'El archivo debe ser una imagen.',
+        'Imagen_Nueva.nullable' => 'El campo Imagen Nueva debe ser una imagen válida.'
+    ];
+    
+
     public function mount(Proyecto $proyectos)
     {
         $this->proyecto_id = $proyectos->id;
