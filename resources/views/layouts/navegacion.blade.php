@@ -1,5 +1,5 @@
 <!-- Main navigation container -->
-<nav class="relative flex w-full flex-nowrap items-center justify-between bg-[#FBFBFB] py-2 lg:flex-wrap lg:justify-start lg:py-4"
+<nav class="relative flex w-full flex-nowrap items-center justify-between bg-white py-2 lg:flex-wrap lg:justify-start lg:py-4"
     data-te-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between lg:w-3/4 lg:mx-auto px-3">
         <div class="ml-2">

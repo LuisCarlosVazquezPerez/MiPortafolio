@@ -1,9 +1,21 @@
 <x-app-layout>
     @include('layouts.navegacion')
 
-    <div class="grid grid-cols-2">
-      <x-mi-nombre />
-      <x-mi-foto />
-    </div>
+    <div class="flex flex-col-reverse md:grid md:grid-cols-2 w-11/12 mx-auto">
+        <div class="flex justify-center items-center">
+            <x-mi-nombre />
+        </div>
+
+        <div>
+            <x-mi-foto />
+        </div>
+      </div>
       
+      <div class="mt-10">
+        <x-skills />
+      </div>
+
+      
+
+
 </x-app-layout>

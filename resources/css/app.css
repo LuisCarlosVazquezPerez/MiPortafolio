@@ -2,49 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-   /* Estilo para el borde inferior */
-   .underline-animation {
-    position: relative;
-    text-decoration: none;
-    color: #1E40AF; /* Color del texto normal */
+/* Estilo para el borde inferior */
+.underline-animation {
+  position: relative;
+  text-decoration: none;
+  color: #1E40AF;
+  /* Color del texto normal */
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  /* Grosor del borde inferior */
+  top: 25px;
+  bottom: 0;
+  left: 0;
+  background-color: #1E40AF;
+  /* Color del borde inferior */
+  transition: width 0.3s ease-out;
+  /* Duración y efecto de transición */
+}
+
+.texto {
+  color: rgb(30, 64, 175);
+}
+
+
+
+.underline-animation:hover::after,
+.underline-animation.active::after {
+  width: 100%;
+  /* Ancho completo al hacer hover o enlace activo */
+}
+
+.som {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.github-link:hover~.bg-red-500::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-image);
+  backdrop-filter: blur(8px);
+  /* Ajusta el valor de desenfoque según desees */
+  z-index: -1;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-
-  .underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px; /* Grosor del borde inferior */
-    top: 25px;
-    bottom: 0;
-    left: 0;
-    background-color: #1E40AF; /* Color del borde inferior */
-    transition: width 0.3s ease-out; /* Duración y efecto de transición */
+  100% {
+    transform: translateX(calc(-250px * 8));
   }
+}
 
-  .texto{
-    color: rgb(30,64,175);
-  }
+.slider {
+  background: white;
+
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  animation: scroll 15s linear infinite;
+  display: flex;
+  width: calc(250px * 16);
+}
+
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
 
 
 
-  .underline-animation:hover::after,
-  .underline-animation.active::after {
-    width: 100%; /* Ancho completo al hacer hover o enlace activo */
-  }
 
-  .som{
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-  }
-  
-  .github-link:hover ~ .bg-red-500::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: var(--bg-image);
-    backdrop-filter: blur(8px); /* Ajusta el valor de desenfoque según desees */
-    z-index: -1;
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  border: none;
+  background: rgb(59,130,246);
+  color: ghostwhite;
+  overflow: hidden;
+}
+
+.cssbuttons-io svg {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
 }
 
