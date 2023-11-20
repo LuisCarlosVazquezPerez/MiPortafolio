@@ -14,5 +14,6 @@ class Reconocimiento extends Model
         'Tecnologias',
         'Pdf',
         'user_id',
+        'Fecha',
     ];
 }

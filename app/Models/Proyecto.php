@@ -16,5 +16,6 @@ class Proyecto extends Model
         'Imagen',
         'user_id',
         'Github',
+        'Fecha',
     ];
 }

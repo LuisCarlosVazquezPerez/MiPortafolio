@@ -9,7 +9,7 @@ class MostrarReco extends Component
 {
 
     public $buscar = '';
-    public $ordenar = 'asc';
+    public $ordenar = 'desc';
     public $tecnologiaSeleccionada = '';
     public $tecnologiasDisponibles = [];
 
@@ -26,7 +26,7 @@ class MostrarReco extends Component
 
     public function Ordenar()
     {
-        $this->ordenar = ($this->ordenar == 'asc') ? 'desc' : 'asc';
+        $this->ordenar = ($this->ordenar == 'desc') ? 'asc' : 'desc';
     }
 
 
@@ -45,7 +45,7 @@ class MostrarReco extends Component
             $query->where('Tecnologias', 'like', '%' . $this->tecnologiaSeleccionada . '%');
         }
 
-        $reconocimientos = $query->orderBy('Empresa', $this->ordenar)->get();
+        $reconocimientos = $query->orderBy('Fecha', $this->ordenar)->get();
 
         return view('livewire.mostrar-reco', [
             'reconocimientos' => $reconocimientos

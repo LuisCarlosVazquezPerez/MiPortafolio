@@ -12,6 +12,7 @@ class EditarReconocimiento extends Component
 
     public $reconocimiento_id;
     public $Titulo;
+    public $Fecha;
     public $Empresa;
     public $Tecnologias;
     public $Pdf;
@@ -21,6 +22,7 @@ class EditarReconocimiento extends Component
 
     protected $rules = [
         'Titulo' => 'required|string',
+        'Fecha' => 'required',
         'Empresa' => 'required|string',
         'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
         'Pdf_Nuevo' => 'nullable'
@@ -28,6 +30,7 @@ class EditarReconocimiento extends Component
 
     protected $messages = [
         'Titulo.required' => 'El campo Título es obligatorio.',
+        'Fecha.required' => 'El campo Fecha es obligatorio.',
         'Titulo.string' => 'El campo Título debe ser una cadena de caracteres.',
         'Empresa.required' => 'El campo Empresa es obligatorio.',
         'Empresa.string' => 'El campo Empresa debe ser una cadena de caracteres.',
@@ -41,6 +44,7 @@ class EditarReconocimiento extends Component
     {
         $this->reconocimiento_id = $reconocimientos->id;
         $this->Titulo = $reconocimientos->Titulo;
+        $this->Fecha = $reconocimientos->Fecha;
         $this->Empresa = $reconocimientos->Empresa;
         $this->Tecnologias = $reconocimientos->Tecnologias;
         $this->Pdf = $reconocimientos->Pdf;
@@ -67,6 +71,7 @@ class EditarReconocimiento extends Component
 
         $reconocimientos = Reconocimiento::find($this->reconocimiento_id);
         $reconocimientos->Titulo = $datos['Titulo'];
+        $reconocimientos->Fecha = $datos['Fecha'];
         $reconocimientos->Empresa = $datos['Empresa'];
         $reconocimientos->Tecnologias = $datos['Tecnologias'];
         $reconocimientos->Pdf = $datos['Pdf'] ?? $reconocimientos->Pdf;

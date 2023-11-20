@@ -13,12 +13,14 @@ class ReconocimientoCrear extends Component
     public $Empresa;
     public $Tecnologias;
     public $Pdf;
+    public $Fecha;
 
     use WithFileUploads;
 
 
     protected $rules = [
         'Titulo' => 'required|string',
+        'Fecha' => 'required',
         'Empresa' => 'required|string',
         'Tecnologias' => 'regex:/^(?!.*\b(\w+)\b.*\b\1\b)(?:\b[A-Za-z]+(?:, [A-Za-z]+)*\b)+$/',
         'Pdf' => 'required',
@@ -26,6 +28,7 @@ class ReconocimientoCrear extends Component
 
     protected $messages = [
         'Titulo.required' => 'El campo Título es obligatorio.',
+        'Fecha.required' => 'El campo Fecha es obligatorio.',
         'Titulo.string' => 'El campo Título debe ser una cadena de caracteres.',
         'Empresa.required' => 'El campo Empresa es obligatorio.',
         'Empresa.string' => 'El campo Empresa debe ser una cadena de caracteres.',
@@ -43,6 +46,7 @@ class ReconocimientoCrear extends Component
 
         Reconocimiento::create([
             'Titulo' => $datos['Titulo'],
+            'Fecha' => $datos['Fecha'],
             'Empresa' => $datos['Empresa'],
             'Tecnologias' => $datos['Tecnologias'],
             'Pdf' => $datos['Pdf'],

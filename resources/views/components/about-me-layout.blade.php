@@ -2,15 +2,15 @@
 <div>
     <div class="lg:grid lg:grid-cols-2 md:w-4/5 md:mx-auto gap-11 mt-11">
 
-        <div>
-            <img src="img/persona.avif" alt="">
+        <div class="flex justify-center items-center">
+            <img src="img/luislay2.png" class="w-1/2 lg:w-3/4 xl:w-1/2" alt="About me foto">
         </div>
 
         <div class="flex flex-col justify-center">
             <div class="w-4/5 mx-auto md:w-full">
                 <h3 class="font-bold text-4xl text-blue-800 text-center md:text-left lg:text-5xl mt-5 lg:mt-0">Acerca de
                     mi</h3>
-                <p class="text-center md:text-left">Soy Luis, tengo {{$edad}} años y me apasiona el desarrollo web, especialmente el frontend. Soy una persona autodidacta a la que le gusta el café, escuchar música y leer. En mi trayectoria como desarrollador web, he impartido talleres en mi universidad, participado en un hackathon y en torneos de programación.</p>
+                <p class="text-center md:text-left lg:text-lg">Soy Luis, tengo {{$edad}} años y me apasiona el desarrollo web, especialmente el frontend. Soy una persona autodidacta a la que le gusta el café, escuchar música y leer. En mi trayectoria como desarrollador web, he impartido talleres en mi universidad, participado en un hackathon y en torneos de programación.</p>
             </div>
 
             <div class="main">

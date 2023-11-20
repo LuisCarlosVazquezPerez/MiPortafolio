@@ -2,7 +2,7 @@
 <footer class="flex flex-col items-center bg-blue-700 text-center text-white">
     <div class="container px-6 pt-6">
         <div class="mb-6 flex justify-center">
-            <a href="#!" type="button"
+            <a href="https://www.facebook.com/LuisCarlosVazquezPerez11" target="_blank" type="button"
                 class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -12,7 +12,7 @@
             </a>
 
 
-            <a href="#!" type="button"
+            <a href="mailto:luiscarlosvazquezperez@gmail.com" target="_blank" type="button"
                 class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor"
@@ -23,7 +23,7 @@
                 </svg>
             </a>
 
-            <a href="#!" type="button"
+            <a href="https://www.instagram.com/luisvazquezperez11/?igshid=ZDdkNTZiNTM%3D" target="_blank" type="button"
                 class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor"
@@ -43,7 +43,7 @@
                 </svg>
             </a>
 
-            <a href="#!" type="button"
+            <a href="https://github.com/LuisCarlosVazquezPerez" target="_blank" type="button"
                 class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor"
@@ -69,7 +69,7 @@
             </div>
         </div>
             
-        <a class="text-whitehite" href="https://tw-elements.com/">Luis Carlos Vazquez Perez - {{ date('Y') }}</a>
+        <a class="text-whitehite" target="_blank" href="https://github.com/LuisCarlosVazquezPerez">Luis Carlos Vazquez Perez - {{ date('Y') }}</a>
     </div>
 
 

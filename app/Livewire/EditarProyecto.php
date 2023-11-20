@@ -17,11 +17,13 @@ class EditarProyecto extends Component
     public $Tecnologias;
     public $Imagen;
     public $Imagen_Nueva;
+    public $Fecha;
 
     use WithFileUploads;
 
     protected $rules = [
         'Nombre' => 'required|string',
+        'Fecha' => 'required',
         'Github' => 'required|string',
         'Descripcion' => 'required|string',
         'Anclas' => 'required|string',
@@ -31,6 +33,7 @@ class EditarProyecto extends Component
 
     protected $messages = [
         'Nombre.required' => 'El campo Nombre es obligatorio.',
+        'Fecha.required' => 'El campo Fecha es obligatorio.',
         'Github.required' => 'El campo Github es obligatorio.',
         'Nombre.string' => 'El campo Nombre debe ser una cadena de caracteres.',
         'Descripcion.required' => 'El campo Descripcion es obligatorio.',
@@ -52,6 +55,7 @@ class EditarProyecto extends Component
         $this->Tecnologias = $proyectos->Tecnologias;
         $this->Imagen = $proyectos->Imagen;
         $this->Github = $proyectos->Github;
+        $this->Fecha = $proyectos->Fecha;
     }
 
     public function actualizarProyecto(){
@@ -69,6 +73,7 @@ class EditarProyecto extends Component
         $proyecto = Proyecto::find($this->proyecto_id);
         $proyecto->Nombre = $datos['Nombre'];
         $proyecto->Github = $datos['Github'];
+        $proyecto->Fecha = $datos['Fecha'];
         $proyecto->Descripcion = $datos['Descripcion'];
         $proyecto->Anclas = $datos['Anclas'];
         $proyecto->Tecnologias = $datos['Tecnologias'];

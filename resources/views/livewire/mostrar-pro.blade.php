@@ -18,19 +18,18 @@
                 <input wire:model.live='buscar' class="peer bg-gray-100 w-full outline-none text-sm text-gray-400 pr-2"
                     type="search" id="search" placeholder="Buscar tecnologías..." />
             </div>
-
+          
 
             <button wire:click="Ordenar">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="hidden lg:flex icon icon-tabler icon-tabler-sort-ascending-letters text-gray-400 hover:text-indigo-900 cursor-pointer"
-                    width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M15 10v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" />
-                    <path d="M19 21h-4l4 -7h-4" />
-                    <path d="M4 15l3 3l3 -3" />
-                    <path d="M7 6v12" />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="hidden lg:flex icon icon-tabler icon-tabler-sort-ascending-letters text-gray-400 hover:text-indigo-900 cursor-pointer" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5" />
+                    <path d="M19 16v6" />
+                    <path d="M22 19l-3 3l-3 -3" />
+                    <path d="M16 3v4" />
+                    <path d="M8 3v4" />
+                    <path d="M4 11h16" />
+                  </svg>
             </button>
 
             <select wire:model.live="tecnologiaSeleccionada"

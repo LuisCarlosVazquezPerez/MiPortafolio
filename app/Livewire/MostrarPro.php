@@ -9,7 +9,7 @@ class MostrarPro extends Component
 {
 
     public $buscar = '';
-    public $ordenar = 'asc';
+    public $ordenar = 'desc';
     public $tecnologiaSeleccionada = '';
     public $tecnologiasDisponibles = [];
 
@@ -26,7 +26,7 @@ class MostrarPro extends Component
 
     public function Ordenar()
     {
-        $this->ordenar = ($this->ordenar == 'asc') ? 'desc' : 'asc';
+        $this->ordenar = ($this->ordenar == 'desc') ? 'asc' : 'desc';
     }
 
     public function render()
@@ -45,7 +45,7 @@ class MostrarPro extends Component
             $query->where('Tecnologias', 'like', '%' . $this->tecnologiaSeleccionada . '%');
         }
 
-        $proyectos = $query->orderBy('Nombre', $this->ordenar)->get();
+        $proyectos = $query->orderBy('Fecha', $this->ordenar)->get();
 
         
         return view('livewire.mostrar-pro',[

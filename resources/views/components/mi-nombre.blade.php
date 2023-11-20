@@ -1,7 +1,8 @@
 <div>
 
     <div>
-        <h2 class="text-center text-4xl sm:text-5xl md:text-4xl lg:text-5xl   xl:text-8xl">Hola Soy</h2>
+        <h2 class="text-center text-4xl sm:text-5xl md:text-4xl lg:text-5xl   xl:text-8xl font-bold md:font-normal">Hola
+            Soy</h2>
         <h2 class="text-center text-7xl sm:text-8xl md:text-5xl lg:text-8xl   xl:text-9xl    font-bold text-blue-500">
             Luis Carlos</h2>
     </div>
@@ -12,21 +13,31 @@
     </div>
 
     <div class="flex justify-center mt-4 md:justify-center lg:justify-end md:mt-0">
-        <button class="cssbuttons-io w-full md:w-auto lg:hidden">
-            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path fill="currentColor"
-                        d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z">
-                    </path>
-                </svg> CV</span>
-        </button>
+        <div class="w-full md:w-auto ">
+        <a href="cv/cvprueba.pdf" download="cvprueba.pdf">
+            <button class="cssbuttons-io w-full md:w-auto lg:hidden">
+                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor"
+                            d="M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z">
+                        </path>
+                    </svg> CV</span>
+            </button>
+        </a>
+    </div>
 
         <div class="hidden lg:flex">
-            <button class="Btn">
-                <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
-                <span class="icon2"></span>
-                <span class="tooltip">Descargar CV</span>
-             </button>
+            <a href="cv/cvprueba.pdf" download="cvprueba.pdf">
+                <button class="Btn">
+                    <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                        </path>
+                    </svg>
+                    <span class="icon2"></span>
+                    <span class="tooltip">Descargar CV</span>
+                </button>
+            </a>
         </div>
     </div>
 
