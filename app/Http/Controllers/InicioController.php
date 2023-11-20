@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -11,7 +12,13 @@ class InicioController extends Controller
      */
     public function index()
     {
-        return view('luiscvp');
+        $fechaNacimiento = Carbon::createFromDate(2001, 12, 11);
+        $edad = $fechaNacimiento->diffInYears(Carbon::now());
+    
+        // Pasar la variable $edad a la vista 'luiscvp' dentro del componente x-about-me-layout
+        return view('luiscvp',[
+            'edad' => $edad
+        ]);
     }
 
     /**

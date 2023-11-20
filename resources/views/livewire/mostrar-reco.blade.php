@@ -4,7 +4,7 @@
         <div class='block lg:flex gap-8 mt-9 items-center lg:justify-center'> {{-- PADRE --}}
 
             <div
-                class="relative flex items-center w-5/6 mx-auto lg:mx-0 lg:w-1/5 h-12 rounded-lg bg-white overflow-hidden">
+                class="relative flex items-center w-5/6 mx-auto lg:mx-0 lg:w-1/5 h-12 rounded-lg bg-gray-100 overflow-hidden">
                 <div class="grid place-items-center h-full w-12 text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -13,7 +13,7 @@
                     </svg>
                 </div>
 
-                <input wire:model.live='buscar' class="peer w-full outline-none text-sm text-gray-700 pr-2"
+                <input wire:model.live='buscar' class="peer w-full outline-none text-sm bg-gray-100 text-gray-400  pr-2"
                     type="search" id="search" placeholder="Buscar tecnologías..." />
             </div>
 
@@ -32,10 +32,10 @@
             </button>
 
             <select wire:model.live="tecnologiaSeleccionada"
-                class="hidden lg:flex text-gray-400 lg:w-1/5 h-12  py-3 px-4 pe-9 block border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none">
+                class="hidden lg:flex bg-gray-100 text-gray-400 lg:w-1/5 h-12  py-3 px-4 pe-9 block border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none">
                 <option value="" selected>Seleccionar</option>
                 @foreach ($tecnologiasDisponibles as $tecnologia)
-                    <option class="text-black" value="{{ $tecnologia }}">{{ $tecnologia }}</option>
+                    <option class="text-black bg-white" value="{{ $tecnologia }}">{{ $tecnologia }}</option>
                 @endforeach
             </select>
 
@@ -52,8 +52,7 @@
             </h5>
             <div class="p-6 pt-3">
 
-
-                <div class="lg:flex lg:justify-between block">
+                <div class="lg:flex lg:justify-between block ">
                     <div>
                         <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
                             {{ $reconocimiento->Titulo }}
@@ -121,5 +120,6 @@
             </div>
         </div>
     @endforeach
+
 
 </div>

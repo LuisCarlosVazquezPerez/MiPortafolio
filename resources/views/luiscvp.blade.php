@@ -15,6 +15,14 @@
         <x-skills />
       </div>
 
+      <x-about-me-layout class="mt-10" :edad="$edad" />
+      <x-backfront />
+      
+      <x-proyectos-layout class="mt-10" />
+
+
+      <x-footer class="mt-10" />
+
       
 
 

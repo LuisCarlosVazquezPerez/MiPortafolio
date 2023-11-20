@@ -2,7 +2,7 @@
 
     <div class='block lg:flex gap-8 mt-9 items-center lg:justify-center'> {{-- PADRE --}}
 
-        <div class="relative flex items-center w-5/6 mx-auto lg:mx-0 lg:w-1/5 h-12 rounded-lg bg-white overflow-hidden">
+        <div class="relative flex items-center w-5/6 mx-auto lg:mx-0 lg:w-1/5 h-12 rounded-lg overflow-hidden">
             <div class="grid place-items-center h-full w-12 text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">

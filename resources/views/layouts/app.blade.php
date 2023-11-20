@@ -20,9 +20,14 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
+        @stack('pacman')
+        @stack('botonCV')
+        @stack('aboutme')
+        @stack('skills')
+        @stack('pro')
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen">
+        <div class="min-h-screen bg-white">
             <main>
                 {{ $slot }}
             </main>
@@ -33,5 +38,6 @@
         @stack('desaparecer')
         @stack('letras')
         @stack('animacion')
+        @stack('skills')
     </body>
 </html>

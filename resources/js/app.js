@@ -11,8 +11,9 @@ import {
   Input,
   initTE,
   Collapse,
-  Select
+  Select,
+  Ripple,
 } from "tw-elements";
 
-initTE({ Input, Select, Collapse   });
+initTE({ Input, Select, Collapse, Ripple});
 
