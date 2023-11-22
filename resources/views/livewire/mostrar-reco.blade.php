@@ -44,8 +44,7 @@
     {{-- ! MOSTRAR TODOS LOS RECO --}}
 
     @foreach ($reconocimientos as $reconocimiento)
-        <div
-            class="block w-10/12 md:w-4/5 mx-auto mt-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+        <div class="block w-10/12 md:w-4/5 mx-auto mt-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
             <h5 class="border-b-2 border-neutral-100 px-6 py-3 text-xl font-bold leading-tight text-blue-800">
                 {{ $reconocimiento->Empresa }}
             </h5>

@@ -1,5 +1,5 @@
 <!--Footer container-->
-<footer class="flex flex-col items-center bg-blue-700 text-center text-white">
+<footer class="flex flex-col items-center bg-blue-700 text-center text-white mt-6">
     <div class="container px-6 pt-6">
         <div class="mb-6 flex justify-center">
             <a href="https://www.facebook.com/LuisCarlosVazquezPerez11" target="_blank" type="button"

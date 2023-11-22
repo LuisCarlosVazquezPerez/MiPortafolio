@@ -3,7 +3,7 @@
     data-te-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between lg:w-3/4 lg:mx-auto px-3">
         <div class="ml-2">
-            <a href=""><svg xmlns="http://www.w3.org/2000/svg"
+            <a href="https://github.com/LuisCarlosVazquezPerez" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
                     class="icon icon-tabler icon-tabler-brand-github-filled text-blue-800 hover:text-blue-900 hover:scale-110 transition ease-in-out"
                     width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#c9de00" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">

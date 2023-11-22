@@ -1,14 +1,14 @@
 <div>
 
     <div>
-        <h2 class="text-center text-4xl sm:text-5xl md:text-4xl lg:text-5xl   xl:text-8xl font-bold md:font-normal">Hola
+        <h2 data-aos="fade-right" class="text-center text-4xl sm:text-5xl md:text-4xl lg:text-5xl   xl:text-8xl font-bold md:font-normal">Hola
             Soy</h2>
-        <h2 class="text-center text-7xl sm:text-8xl md:text-5xl lg:text-8xl   xl:text-9xl    font-bold text-blue-500">
+        <h2 data-aos="fade-up" class="text-center text-7xl sm:text-8xl md:text-5xl lg:text-8xl   xl:text-9xl    font-bold text-blue-500">
             Luis Carlos</h2>
     </div>
 
     <div class="h-10">
-        <div id="messenger"
+        <div id="messenger" data-aos="fade-up" 
             class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl  text-blue-600 text-center font-bold"></div>
     </div>
 
