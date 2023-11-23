@@ -34,6 +34,8 @@
             </main>
         </div>
 
+        @include('components.footer')
+
         @livewireScripts
         @stack('scripts')
         @stack('desaparecer')

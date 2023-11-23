@@ -19,15 +19,18 @@
 
 
             <button wire:click="Ordenar">
-                <svg xmlns="http://www.w3.org/2000/svg" class="hidden lg:flex icon icon-tabler icon-tabler-sort-ascending-letters text-gray-400 hover:text-indigo-900 cursor-pointer" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="hidden lg:flex icon icon-tabler icon-tabler-sort-ascending-letters text-gray-400 hover:text-indigo-900 cursor-pointer"
+                    width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5" />
                     <path d="M19 16v6" />
                     <path d="M22 19l-3 3l-3 -3" />
                     <path d="M16 3v4" />
                     <path d="M8 3v4" />
                     <path d="M4 11h16" />
-                  </svg>
+                </svg>
             </button>
 
             <select wire:model.live="tecnologiaSeleccionada"
@@ -44,7 +47,8 @@
     {{-- ! MOSTRAR TODOS LOS RECO --}}
 
     @foreach ($reconocimientos as $reconocimiento)
-        <div class="block w-10/12 md:w-4/5 mx-auto mt-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+        <div
+            class="block w-10/12 md:w-4/5 mx-auto mt-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
             <h5 class="border-b-2 border-neutral-100 px-6 py-3 text-xl font-bold leading-tight text-blue-800">
                 {{ $reconocimiento->Empresa }}
             </h5>

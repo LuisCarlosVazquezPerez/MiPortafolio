@@ -21,8 +21,7 @@
       <x-proyectos-layout class="mt-10" />
 
 
-      <x-footer class="mt-10" />
-
+      
       
 
 
